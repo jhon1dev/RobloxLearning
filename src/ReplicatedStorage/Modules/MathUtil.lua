@@ -11,15 +11,15 @@ end
 function MathUtils:Minus(...)
 	local difference = 0
 	for _, value in {...} do
-		difference -= value
+		difference = value - difference
 	end
 	return difference
 end
 
 function MathUtils:Multiply(...)
-	local product = 0
+	local product = 1
 	for _, value in {...} do
-		product *= value
+		product = value * product
 	end
 	return product
 end
@@ -28,14 +28,12 @@ function MathUtils:Divide(n1:number, n2:number)
 	return n1 / n2
 end
 
-function MathUtils:Square(n1:number, n2:number)
-	return n1 ^ n2
+function MathUtils:Square(n1:number)
+	return n1 ^ 2
 end
 
 function MathUtils:Mod(n1:number, n2:number)
 	return n1 % n2
 end
-
-
 
 return MathUtils
